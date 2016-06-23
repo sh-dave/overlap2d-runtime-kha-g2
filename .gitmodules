@@ -3,7 +3,8 @@
 	url = https://github.com/sh-dave/haxe-format-o2d
 [submodule "Example/Libraries/spriter"]
 	path = Example/Libraries/spriter
-	url = https://github.com/wighawag/spriter
+	url = https://github.com/sh-dave/spriter
 [submodule "Example/Libraries/spriterkha"]
 	path = Example/Libraries/spriterkha
 	url = https://github.com/sh-dave/spriterkha
+	branch = scaling
