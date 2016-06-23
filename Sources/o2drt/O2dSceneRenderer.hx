@@ -1,34 +1,49 @@
 package o2drt;
 
+import kha.graphics2.Graphics;
+import format.o2d.Data;
+
 class O2dSceneRenderer {
-	public static function render( g : kha.graphics2.Graphics, scenes : Map<String, O2dRTScene>, ad : format.o2d.AtlasData.O2dAtlasData ) {
+	public static function render( g : Graphics, scenes : Map<String, O2dRTScene>, assets : o2drt.O2dRTAssets ) {
 		for (s in scenes) {
 			for (lo in s.layerOrder) {
 				for (item in s.root.get(lo)) {
-					renderItem(item, g, 0.0, 0.0, ad);
+					renderItem(g, item, 0.0, 0.0, assets);
 				}
 			}
 		}
 	}
 
-	static function renderItem( item : O2dLayerItem, g : kha.graphics2.Graphics, xoffset : Float, yoffset : Float, ad : format.o2d.AtlasData.O2dAtlasData ) {
+	public static function step( scenes : Map<String, O2dRTScene>, dt : Float ) {
+		for (s in scenes) {
+			for (lo in s.layerOrder) {
+				for (item in s.root.get(lo)) {
+					stepItem(item, dt);
+				}
+			}
+		}
+	}
+
+	static function renderItem( g : Graphics, item : O2dLayerItem, xoffset : Float, yoffset : Float, assets : o2drt.O2dRTAssets ) {
 		switch (item) {
-			case O2dLayerItem.Image(i): renderImage(i, g, xoffset, yoffset, ad);
+			case O2dLayerItem.Image(i): renderImage(g, i, xoffset, yoffset, assets);
 			case O2dLayerItem.Composite(i, children): {
 				for (layer in children) {
 					for (child in layer) {
-						renderItem(child, g, i.x + xoffset, i.y + yoffset, ad);
+						renderItem(g, child, i.x + xoffset, i.y + yoffset, assets);
 					}
 				}
 			}
-			default:
+			case O2dLayerItem.SpriterAnimation(i, ei): renderSpriterAnimation(g, i, ei, xoffset, yoffset, assets);
+			case O2dLayerItem.Ninepatch(i): throw 'TODO (DK) implement me: render O2dSceneRenderer.renderNinepatch';
 		}
 	}
 
-	static function renderImage( i : format.o2d.Data.O2dImageItem, g : kha.graphics2.Graphics, xoffset : Float, yoffset : Float, ad : format.o2d.AtlasData.O2dAtlasData ) {
+	static function renderImage( g : Graphics, i : O2dImageItem, xoffset : Float, yoffset : Float, assets : o2drt.O2dRTAssets ) {
 		var h : Float = kha.System.windowHeight();
-		var region = Lambda.find(ad.regions, function( r ) return r.id == i.imageName);
-		var image = Reflect.field(kha.Assets.images, KhaUtility.fixAssetId(region.imagePack.imageFilename, true));
+		var pack = assets.atlasData;
+		var region = Lambda.find(pack.regions, function( r ) return r.id == i.imageName);
+		var image = KhaUtility.image(region.imagePack.imageFilename);
 
 		var fx = i.x + xoffset;
 		fx += region.width * (1 - i.scaleX) * 0.5;
@@ -39,5 +54,34 @@ class O2dSceneRenderer {
 		fy += region.height * (1 - i.scaleY) * 0.5;
 
 		g.drawScaledSubImage(image, region.x, region.y, region.width, region.height, fx, fy, i.scaleX * region.width, i.scaleY * region.height);
+	}
+
+	static function renderSpriterAnimation( g : Graphics, i : O2dSpriterAnimationItem, entity : spriter.EntityInstance, xoffset : Float, yoffset : Float, assets : o2drt.O2dRTAssets ) {
+		var h : Float = kha.System.windowHeight();
+
+		var fx = i.x + xoffset;
+		//fx += region.width * (1 - i.scaleX) * 0.5;
+
+		var fy = h - yoffset;
+		fy -= i.y;
+		//fy -= region.height;
+		//fy += region.height * (1 - i.scaleY) * 0.5;
+
+		spriterkha.SpriterG2.drawSpriter(g, assets.spriterAnimationSheets.get(i.animationName), entity, fx, fy);
+	}
+
+	static function stepItem( i : O2dLayerItem, dt : Float ) {
+		switch (i) {
+			case O2dLayerItem.Image(i):
+			case O2dLayerItem.Ninepatch(i):
+			case O2dLayerItem.Composite(i, children): {
+				for (layer in children) {
+					for (child in layer) {
+						stepItem(child, dt);
+					}
+				}
+			}
+			case O2dLayerItem.SpriterAnimation(_, ei): ei.step(dt);
+		}
 	}
 }
