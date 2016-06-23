@@ -1,0 +1,102 @@
+{"frames": [
+
+{
+	"filename": "dog/backleg.png",
+	"frame": {"x":2,"y":2,"w":60,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":60,"h":115},
+	"sourceSize": {"w":60,"h":115},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/body.png",
+	"frame": {"x":64,"y":2,"w":262,"h":146},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":262,"h":146},
+	"sourceSize": {"w":262,"h":146},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/ear.png",
+	"frame": {"x":328,"y":2,"w":95,"h":127},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":127},
+	"sourceSize": {"w":95,"h":127},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/eye-up.png",
+	"frame": {"x":425,"y":2,"w":35,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":42},
+	"sourceSize": {"w":35,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/foreleg.png",
+	"frame": {"x":462,"y":2,"w":54,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":54,"h":97},
+	"sourceSize": {"w":54,"h":97},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/head.png",
+	"frame": {"x":518,"y":2,"w":273,"h":233},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":273,"h":233},
+	"sourceSize": {"w":273,"h":233},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/nose.png",
+	"frame": {"x":793,"y":2,"w":42,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":42,"h":45},
+	"sourceSize": {"w":42,"h":45},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/snout.png",
+	"frame": {"x":837,"y":2,"w":17,"h":8},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":8},
+	"sourceSize": {"w":17,"h":8},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/tail.png",
+	"frame": {"x":856,"y":2,"w":30,"h":144},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":30,"h":144},
+	"sourceSize": {"w":30,"h":144},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "dog/tongue.png",
+	"frame": {"x":888,"y":2,"w":70,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":70,"h":105},
+	"sourceSize": {"w":70,"h":105},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "dog-sheet.png",
+	"format": "RGBA8888",
+	"size": {"w":960,"h":237},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9d95b73ef1a322d21eff8e8c00f2aaea:ab6623a657bcadd810fe1802851d1e1a:d6f52256845f6e307780c7b0fdc64b9a$"
+}
+}

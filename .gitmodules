@@ -1,3 +1,9 @@
 [submodule "Example/Libraries/haxe-format-o2d"]
 	path = Example/Libraries/haxe-format-o2d
 	url = https://github.com/sh-dave/haxe-format-o2d
+[submodule "Example/Libraries/spriter"]
+	path = Example/Libraries/spriter
+	url = https://github.com/wighawag/spriter
+[submodule "Example/Libraries/spriterkha"]
+	path = Example/Libraries/spriterkha
+	url = https://github.com/sh-dave/spriterkha
