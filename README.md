@@ -1,10 +1,11 @@
-# overlay2d-runtime-kha-basicg2
+# overlay2d-runtime-kha-g2
 
 ![latest](latest.png)
 
-- very rudimentary runtime library build for kha/g2
-- mainly to render stuff and see if the haxe-format-o2d parsing works
+- very rudimentary, unoptimized and uncustomizable runtime library for kha/g2
+- mainly to render stuff and see if my haxe-format-o2d parsing works
 - probably won't ever be a full fledged runtime b/c everyone and their mom has their own engine/framework/ecs-system, and it doesn't make sense to try and reinvent the wheel once again
+ - if you think it would be useful to you, open an issue for discussion
 - you can use it as learning resource on how to iterate the parsed data though
 - or maybe something like a builder/factory would make sense so other engines could easily customize a simple wrapper to convert the data to their preferred runtime format?
  - but might just be a waste of effort as it's probably done in 20 loc anyway?
