@@ -1,0 +1,3 @@
+[submodule "Example/Libraries/haxe-format-o2d"]
+	path = Example/Libraries/haxe-format-o2d
+	url = https://github.com/sh-dave/haxe-format-o2d
