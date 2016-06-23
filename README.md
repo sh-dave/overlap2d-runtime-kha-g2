@@ -1,4 +1,4 @@
-# overlay2d-runtime-kha-g2
+# overlap2d-runtime-kha-g2
 
 ![latest](latest.png)
 
