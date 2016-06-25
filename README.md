@@ -2,6 +2,18 @@
 
 ![latest](latest.png)
 
+## progress
+- [x] images - usable, wip
+- [x] composites - usable, wip
+- [x] spriter animations - usable, wip - using forks of wighawags spriter runtime for kha; https://github.com/sh-dave/spriter + https://github.com/sh-dave/spriterkha/tree/scaling
+- [ ] spine animations - not planned for now
+- [ ] sprite animations
+- [ ] ninepatches
+- [ ] particles
+- [ ] lights - not planned for now
+- [ ] ui (labels / buttons / ...)
+
+## notes
 - very rudimentary, unoptimized and uncustomizable runtime library for kha/g2
 - mainly to render stuff and see if my haxe-format-o2d parsing works
 - probably won't ever be a full fledged runtime b/c everyone and their mom has their own engine/framework/ecs-system, and it doesn't make sense to try and reinvent the wheel once again
